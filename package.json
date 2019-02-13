@@ -3,11 +3,27 @@
   "linter-package": true,
   "main": "./lib/init",
   "version": "0.0.3",
+  "private": true,
   "description": "Lint reStructuredText on the fly, using docutils",
   "repository": "https://github.com/AtomLinter/linter-rst",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "renovate": {
+    "extends": [
+      "config:base"
+    ],
+    "semanticCommits": true,
+    "rangeStrategy": "pin",
+    "packageRules": [
+      {
+        "packagePatterns": [
+          "^eslint"
+        ],
+        "groupName": "ESLint packages"
+      }
+    ]
+  }
 }
