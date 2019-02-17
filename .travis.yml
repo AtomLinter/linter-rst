@@ -1,9 +1,7 @@
 ### Project specific config ###
 
 language: python
-python:
-    - 2.7
-    - 3.4
+
 install:
     - pip install docutils
 
@@ -13,9 +11,11 @@ matrix:
   include:
     - os: linux
       env: ATOM_CHANNEL=stable
+      python: 2.7
 
     - os: linux
       env: ATOM_CHANNEL=beta
+      python: 3.4
 
 env:
   global:
