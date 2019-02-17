@@ -2,11 +2,6 @@
 
 language: python
 
-install:
-    - pip install docutils
-
-install: skip
-
 matrix:
   include:
     - os: linux
@@ -20,6 +15,9 @@ matrix:
 env:
   global:
     APM_TEST_PACKAGES: "language-restructuredtext"
+
+install:
+    - pip install docutils    
 
 before_script:
   - rst2html --version
