@@ -1,23 +1,16 @@
 ### Project specific config ###
 
-language: python
-
 matrix:
   include:
     - os: linux
       env: ATOM_CHANNEL=stable
-      python: 2.7
 
     - os: linux
       env: ATOM_CHANNEL=beta
-      python: 3.4
 
 env:
   global:
     APM_TEST_PACKAGES: "language-restructuredtext"
-
-install:
-    - pip install docutils    
 
 before_script:
   - rst2html --version
@@ -51,3 +44,4 @@ addons:
     - fakeroot
     - git
     - libsecret-1-dev
+    - python3-docutils
