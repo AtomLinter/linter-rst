@@ -11,14 +11,14 @@ defaults: &defaults
     - attach_workspace:
         at: /tmp
     - run:
-        name: Install Go
+        name: Install Docutils
         command: |
           sudo apt-get update && \
           sudo apt-get install --assume-yes --quiet --no-install-suggests \
             --no-install-recommends python3-docutils
     - run:
-        name: Go version
-        command: go version
+        name: rst2html version
+        command: rst2html --version
     - run:
         name: Create VFB for Atom to run in
         command: /usr/local/bin/xvfb_start
