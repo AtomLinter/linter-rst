@@ -1,7 +1,7 @@
 {
   "name": "linter-rst",
   "main": "./lib/linter-rst",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "description": "Lint reStructuredText on the fly, using docutils",
   "repository": "https://github.com/AtomLinter/linter-rst",
