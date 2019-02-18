@@ -1,6 +1,5 @@
 {
   "name": "linter-rst",
-  "linter-package": true,
   "main": "./lib/linter-rst",
   "version": "1.0.0",
   "private": true,
