@@ -1,16 +1,36 @@
 {
   "name": "linter-rst",
   "linter-package": true,
-  "main": "./lib/init",
-  "version": "0.0.3",
+  "main": "./lib/linter-rst",
+  "version": "1.0.0",
   "private": true,
   "description": "Lint reStructuredText on the fly, using docutils",
   "repository": "https://github.com/AtomLinter/linter-rst",
   "license": "MIT",
   "engines": {
-    "atom": ">0.50.0"
+    "atom": ">=1.9.0 <2.0.0"
   },
-  "dependencies": {},
+  "configSchema": {
+    "executablePath": {
+      "type": "string",
+      "description": "The path to the `rst2html`. Find by running `which rst2html`",
+      "default": "rst2html"
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "atom --test spec"
+  },
+  "dependencies": {
+    "atom-linter": "10.0.0",
+    "atom-package-deps": "5.0.0"
+  },
+  "devDependencies": {
+    "eslint": "5.13.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-plugin-import": "2.16.0",
+    "jasmine-fix": "1.3.1"
+  },
   "renovate": {
     "extends": [
       "config:base"
@@ -25,5 +45,36 @@
         "groupName": "ESLint packages"
       }
     ]
+  },
+  "package-deps": [
+    "linter:2.0.0"
+  ],
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "2.0.0": "provideLinter"
+      }
+    }
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "rules": {
+      "global-require": "off",
+      "import/no-unresolved": [
+        "error",
+        {
+          "ignore": [
+            "atom"
+          ]
+        }
+      ]
+    },
+    "globals": {
+      "atom": true
+    },
+    "env": {
+      "node": true,
+      "browser": true
+    }
   }
 }
