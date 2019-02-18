@@ -2,6 +2,15 @@
 
 language: generic
 
+addons:
+  apt:
+    packages:
+    - build-essential
+    - fakeroot
+    - git
+    - libsecret-1-dev
+    - python3-docutils
+
 matrix:
   include:
     - os: linux
@@ -38,12 +47,3 @@ git:
 sudo: false
 
 dist: trusty
-
-addons:
-  apt:
-    packages:
-    - build-essential
-    - fakeroot
-    - git
-    - libsecret-1-dev
-    - python3-docutils
