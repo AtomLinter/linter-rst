@@ -12,7 +12,7 @@ const badFile = path.join(__dirname, 'fixtures', 'bad.rst');
 const warnFile = path.join(__dirname, 'fixtures', 'warn.rst');
 const goodFile = path.join(__dirname, 'fixtures', 'good.rst');
 
-describe('The go vet provider for Linter', () => {
+describe('The restructuredtext provider for Linter', () => {
   beforeEach(async () => {
     atom.workspace.destroyActivePaneItem();
     await atom.packages.activatePackage('language-restructuredtext');
