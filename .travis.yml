@@ -10,6 +10,7 @@ addons:
     - git
     - libsecret-1-dev
     - python3-docutils
+    - libgconf-2-4
 
 matrix:
   include:
@@ -46,4 +47,4 @@ git:
 
 sudo: false
 
-dist: trusty
+dist: xenial
